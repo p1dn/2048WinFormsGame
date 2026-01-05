@@ -196,7 +196,36 @@ namespace _2048WinFormsGame
                     }
                 }
             }
+
+            if (IsGameOver()) MessageBox.Show("Вы проиграли");
             return false;
+        }
+
+        private bool IsGameOver()
+        {
+            for (int i = 0; i < mapSize; i++)
+            {
+                for (int j = 0; j < mapSize; j++)
+                {
+                    if (mapNumbers[i, j] == 0)
+                    {
+                        return false;
+                    }
+                }
+            }
+
+            for (int i = 0; i < mapSize; i++)
+            {
+                for (int j = 0; j < mapSize - 1; j++)
+                {
+                    if (mapNumbers[i, j] == mapNumbers[i, j + 1] || mapNumbers[j, i] == mapNumbers[j + 1, i])
+                    {
+                        return false;
+                    }
+                }
+            }
+
+            return true;
         }
 
         private bool UpDownShiftTryMove(int k, int j, int i)
