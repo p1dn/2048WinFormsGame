@@ -15,6 +15,7 @@ namespace _2048WinFormsGame
         private int[,] mapNumbers;
         private int[,] lastMapNumbers;
         private static Random rnd = new Random();
+        private int score;
 
         public Game2048Form()
         {
@@ -26,6 +27,7 @@ namespace _2048WinFormsGame
             lastMapNumbers = new int[mapSize, mapSize];
             mapNumbers = new int[mapSize, mapSize];
             mapLabel = new Label[mapSize, mapSize];
+            score = 0;
 
             GenerateNumber();
             InitMap();
@@ -66,18 +68,18 @@ namespace _2048WinFormsGame
 
         private void GenerateNumber()
         {
-                while (true)
-                {
-                    int randomNumber = rnd.Next(mapSize * mapSize);
-                    int indexRow = randomNumber / mapSize;
-                    int indexColumn = randomNumber % mapSize;
+            while (true)
+            {
+                int randomNumber = rnd.Next(mapSize * mapSize);
+                int indexRow = randomNumber / mapSize;
+                int indexColumn = randomNumber % mapSize;
 
-                    if (mapNumbers[indexRow, indexColumn] == 0)
-                    {
-                        mapNumbers[indexRow, indexColumn] = 2;
-                        break;
-                    }
+                if (mapNumbers[indexRow, indexColumn] == 0)
+                {
+                    mapNumbers[indexRow, indexColumn] = 2;
+                    break;
                 }
+            }
         }
 
         private void Game2048Form_KeyDown(object sender, KeyEventArgs e)
@@ -95,6 +97,7 @@ namespace _2048WinFormsGame
                         if (mapNumbers[j, i] == mapNumbers[j + 1, i])
                         {
                             mapNumbers[j, i] *= 2;
+                            ScoreAdd(j, i);
                             mapNumbers[j + 1, i] = 0;
                         }
                     }
@@ -113,6 +116,7 @@ namespace _2048WinFormsGame
                         if (mapNumbers[j, i] == mapNumbers[j - 1, i])
                         {
                             mapNumbers[j, i] *= 2;
+                            ScoreAdd(j, i);
                             mapNumbers[j - 1, i] = 0;
                         }
                     }
@@ -131,6 +135,7 @@ namespace _2048WinFormsGame
                         if (mapNumbers[i, j] == mapNumbers[i, j + 1])
                         {
                             mapNumbers[i, j] *= 2;
+                            ScoreAdd(i, j);
                             mapNumbers[i, j + 1] = 0;
                         }
                     }
@@ -149,6 +154,7 @@ namespace _2048WinFormsGame
                         if (mapNumbers[i, j] == mapNumbers[i, j - 1])
                         {
                             mapNumbers[i, j] *= 2;
+                            ScoreAdd(i, j);
                             mapNumbers[i, j - 1] = 0;
                         }
                     }
@@ -159,6 +165,12 @@ namespace _2048WinFormsGame
 
             if (CompareMapNumbers()) GenerateNumber();
             MapUpdate();
+        }
+
+        private void ScoreAdd(int i, int j)
+        {
+            score += mapNumbers[i, j];
+            scoreNumberLabel.Text = score.ToString();
         }
 
         private void MapUpdate()
@@ -192,7 +204,7 @@ namespace _2048WinFormsGame
                 {
                     if (lastMapNumbers[i, j] != mapNumbers[i, j])
                     {
-                        return  true;
+                        return true;
                     }
                 }
             }
@@ -318,6 +330,16 @@ namespace _2048WinFormsGame
                     }
                 }
             }
+        }
+
+        private void перезагрузкаToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Application.Restart();
+        }
+
+        private void выходToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }
