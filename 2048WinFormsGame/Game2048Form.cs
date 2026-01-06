@@ -70,13 +70,15 @@ namespace _2048WinFormsGame
         {
             while (true)
             {
+                int numberForRandomNumber = rnd.Next(0, 100);
                 int randomNumber = rnd.Next(mapSize * mapSize);
                 int indexRow = randomNumber / mapSize;
                 int indexColumn = randomNumber % mapSize;
 
                 if (mapNumbers[indexRow, indexColumn] == 0)
                 {
-                    mapNumbers[indexRow, indexColumn] = 2;
+                    if (numberForRandomNumber < 75) mapNumbers[indexRow, indexColumn] = 2;
+                    else mapNumbers[indexRow, indexColumn] = 4;
                     break;
                 }
             }
