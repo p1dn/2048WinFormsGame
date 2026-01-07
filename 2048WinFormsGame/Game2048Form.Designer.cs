@@ -31,10 +31,11 @@
             gameRulesLabel = new Label();
             scoreTextLabel = new Label();
             scoreNumberLabel = new Label();
-            menuStrip1 = new MenuStrip();
             играToolStripMenuItem = new ToolStripMenuItem();
+            результатыToolStripMenuItem = new ToolStripMenuItem();
             перезагрузкаToolStripMenuItem = new ToolStripMenuItem();
             выходToolStripMenuItem = new ToolStripMenuItem();
+            menuStrip1 = new MenuStrip();
             menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
@@ -67,21 +68,18 @@
             scoreNumberLabel.TabIndex = 2;
             scoreNumberLabel.Text = "0";
             // 
-            // menuStrip1
-            // 
-            menuStrip1.Items.AddRange(new ToolStripItem[] { играToolStripMenuItem });
-            menuStrip1.Location = new Point(0, 0);
-            menuStrip1.Name = "menuStrip1";
-            menuStrip1.Size = new Size(984, 24);
-            menuStrip1.TabIndex = 3;
-            menuStrip1.Text = "menuStrip1";
-            // 
             // играToolStripMenuItem
             // 
-            играToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { перезагрузкаToolStripMenuItem, выходToolStripMenuItem });
+            играToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { результатыToolStripMenuItem, перезагрузкаToolStripMenuItem, выходToolStripMenuItem });
             играToolStripMenuItem.Name = "играToolStripMenuItem";
             играToolStripMenuItem.Size = new Size(46, 20);
             играToolStripMenuItem.Text = "Игра";
+            // 
+            // результатыToolStripMenuItem
+            // 
+            результатыToolStripMenuItem.Name = "результатыToolStripMenuItem";
+            результатыToolStripMenuItem.Size = new Size(180, 22);
+            результатыToolStripMenuItem.Text = "Результаты";
             // 
             // перезагрузкаToolStripMenuItem
             // 
@@ -96,6 +94,15 @@
             выходToolStripMenuItem.Size = new Size(180, 22);
             выходToolStripMenuItem.Text = "Выход";
             выходToolStripMenuItem.Click += выходToolStripMenuItem_Click;
+            // 
+            // menuStrip1
+            // 
+            menuStrip1.Items.AddRange(new ToolStripItem[] { играToolStripMenuItem });
+            menuStrip1.Location = new Point(0, 0);
+            menuStrip1.Name = "menuStrip1";
+            menuStrip1.Size = new Size(984, 24);
+            menuStrip1.TabIndex = 3;
+            menuStrip1.Text = "menuStrip1";
             // 
             // Game2048Form
             // 
@@ -123,9 +130,10 @@
         private Label gameRulesLabel;
         private Label scoreTextLabel;
         private Label scoreNumberLabel;
-        private MenuStrip menuStrip1;
         private ToolStripMenuItem играToolStripMenuItem;
+        private ToolStripMenuItem результатыToolStripMenuItem;
         private ToolStripMenuItem перезагрузкаToolStripMenuItem;
         private ToolStripMenuItem выходToolStripMenuItem;
+        private MenuStrip menuStrip1;
     }
 }
