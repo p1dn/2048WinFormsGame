@@ -26,6 +26,8 @@ namespace _2048WinFormsGame
         {
             var gameSizeSelection = new GameSizeSelectionForm(userNameTextBox.Text);
 
+            gameSizeSelection.FormClosed += (s, args) => this.Close();
+
             this.Hide();
             gameSizeSelection.Show();
         }

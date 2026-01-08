@@ -10,16 +10,19 @@ namespace _2048WinFormsGame
 {
     public partial class Game2048Form : Form
     {
-        private const int mapSize = 4;
+        private int mapSize;
+        private string name;
         private Label[,] mapLabel;
         private int[,] mapNumbers;
         private int[,] lastMapNumbers;
         private static Random rnd = new Random();
         private int score;
 
-        public Game2048Form()
+        public Game2048Form(int mapSize, string name)
         {
             InitializeComponent();
+            this.mapSize = mapSize;
+            this.name = name;
         }
 
         private void Game2048Form_Load(object sender, EventArgs e)
@@ -52,15 +55,37 @@ namespace _2048WinFormsGame
         {
             var label = new Label();
 
+            int x = 0;
+            int y = 0;
+
             label.BackColor = Color.FromArgb(192, 192, 255);
             label.Font = new Font("Bahnschrift SemiCondensed", 27.75F, FontStyle.Bold, GraphicsUnit.Point, 204);
             label.ForeColor = Color.SaddleBrown;
             label.Name = "label128";
-            label.Size = new Size(150, 150);
+            switch (mapSize)
+            {
+                case 3:
+                    label.Size = new Size(200, 200);
+                    x = 180 + indexColumn * 210;
+                    y = 280 + indexRow * 210;
+                    break;
+                case 4:
+                    label.Size = new Size(150, 150);
+                    x = 180 + indexColumn * 160;
+                    y = 280 + indexRow * 160;
+                    break;
+                case 5:
+                    label.Size = new Size(120, 120);
+                    x = 180 + indexColumn * 130;
+                    y = 280 + indexRow * 130;
+                    break;
+                case 6:
+                    label.Size = new Size(100, 100);
+                    x = 180 + indexColumn * 110;
+                    y = 280 + indexRow * 110;
+                    break;
+            }
             label.TextAlign = ContentAlignment.MiddleCenter;
-
-            int x = 180 + indexColumn * 160;
-            int y = 280 + indexRow * 160;
             label.Location = new Point(x, y);
 
             return label;
