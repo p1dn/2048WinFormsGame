@@ -36,6 +36,8 @@
             перезагрузкаToolStripMenuItem = new ToolStripMenuItem();
             выходToolStripMenuItem = new ToolStripMenuItem();
             menuStrip1 = new MenuStrip();
+            bestResultTextLabel = new Label();
+            bestResultNumberLabel = new Label();
             menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
@@ -80,6 +82,7 @@
             результатыToolStripMenuItem.Name = "результатыToolStripMenuItem";
             результатыToolStripMenuItem.Size = new Size(180, 22);
             результатыToolStripMenuItem.Text = "Результаты";
+            результатыToolStripMenuItem.Click += результатыToolStripMenuItem_Click;
             // 
             // перезагрузкаToolStripMenuItem
             // 
@@ -104,12 +107,34 @@
             menuStrip1.TabIndex = 3;
             menuStrip1.Text = "menuStrip1";
             // 
+            // bestResultTextLabel
+            // 
+            bestResultTextLabel.AutoSize = true;
+            bestResultTextLabel.Font = new Font("Segoe UI Black", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 204);
+            bestResultTextLabel.Location = new Point(412, 196);
+            bestResultTextLabel.Name = "bestResultTextLabel";
+            bestResultTextLabel.Size = new Size(285, 37);
+            bestResultTextLabel.TabIndex = 4;
+            bestResultTextLabel.Text = "Лучший результат:";
+            // 
+            // bestResultNumberLabel
+            // 
+            bestResultNumberLabel.AutoSize = true;
+            bestResultNumberLabel.Font = new Font("Segoe UI Black", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 204);
+            bestResultNumberLabel.Location = new Point(703, 196);
+            bestResultNumberLabel.Name = "bestResultNumberLabel";
+            bestResultNumberLabel.Size = new Size(33, 37);
+            bestResultNumberLabel.TabIndex = 5;
+            bestResultNumberLabel.Text = "0";
+            // 
             // Game2048Form
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.BurlyWood;
             ClientSize = new Size(984, 961);
+            Controls.Add(bestResultNumberLabel);
+            Controls.Add(bestResultTextLabel);
             Controls.Add(scoreNumberLabel);
             Controls.Add(scoreTextLabel);
             Controls.Add(gameRulesLabel);
@@ -135,5 +160,7 @@
         private ToolStripMenuItem перезагрузкаToolStripMenuItem;
         private ToolStripMenuItem выходToolStripMenuItem;
         private MenuStrip menuStrip1;
+        private Label bestResultTextLabel;
+        private Label bestResultNumberLabel;
     }
 }

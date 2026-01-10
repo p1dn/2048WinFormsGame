@@ -11,18 +11,20 @@ namespace _2048WinFormsGame
     public partial class Game2048Form : Form
     {
         private int mapSize;
-        private string name;
+        private User user;
         private Label[,] mapLabel;
         private int[,] mapNumbers;
         private int[,] lastMapNumbers;
-        private static Random rnd = new Random();
+        private Random rnd;
         private int score;
+        private UserRepository userRepository;
+        private bool firstTimeLose;
 
         public Game2048Form(int mapSize, string name)
         {
             InitializeComponent();
             this.mapSize = mapSize;
-            this.name = name;
+            user = new User(name);
         }
 
         private void Game2048Form_Load(object sender, EventArgs e)
@@ -30,10 +32,30 @@ namespace _2048WinFormsGame
             lastMapNumbers = new int[mapSize, mapSize];
             mapNumbers = new int[mapSize, mapSize];
             mapLabel = new Label[mapSize, mapSize];
+            rnd = new Random();
+            userRepository = new UserRepository();
+            userRepository.Load();
             score = 0;
+            firstTime = true;
+            bestResultNumberLabel.Text = findBestResult();
 
             GenerateNumber();
             InitMap();
+        }
+
+        private string findBestResult()
+        {
+            int bestResult = 0;
+
+            foreach (var user in userRepository.Users)
+            {
+                if (user.Score > bestResult)
+                {
+                    bestResult = user.Score;
+                }
+            }
+
+            return bestResult.ToString();
         }
 
         private void InitMap()
@@ -236,7 +258,16 @@ namespace _2048WinFormsGame
                 }
             }
 
-            if (IsGameOver()) MessageBox.Show("Вы проиграли");
+            if (IsGameOver())
+            {
+                MessageBox.Show("Вы проиграли");
+                if (firstTimeLose)
+                {
+                    user.Score = score;
+                    userRepository.Save(user);
+                    firstTimeLose = false;
+                }
+            }
             return false;
         }
 
@@ -367,6 +398,13 @@ namespace _2048WinFormsGame
         private void выходToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void результатыToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var userList = new UserListForm();
+
+            userList.Show();
         }
     }
 }
