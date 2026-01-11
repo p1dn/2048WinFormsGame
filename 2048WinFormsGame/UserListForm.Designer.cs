@@ -66,9 +66,9 @@
             // 
             // closeButton
             // 
-            closeButton.BackColor = Color.DarkSlateGray;
+            closeButton.BackColor = Color.LemonChiffon;
             closeButton.Font = new Font("Segoe UI Black", 18F, FontStyle.Bold, GraphicsUnit.Point, 204);
-            closeButton.ForeColor = SystemColors.ButtonFace;
+            closeButton.ForeColor = Color.DarkSlateGray;
             closeButton.Location = new Point(12, 872);
             closeButton.Name = "closeButton";
             closeButton.Size = new Size(960, 77);

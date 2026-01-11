@@ -37,9 +37,9 @@
             // 
             // size6Button
             // 
-            size6Button.BackColor = Color.DarkSlateGray;
+            size6Button.BackColor = Color.Wheat;
             size6Button.Font = new Font("Segoe UI Black", 36F, FontStyle.Bold, GraphicsUnit.Point, 204);
-            size6Button.ForeColor = SystemColors.ButtonFace;
+            size6Button.ForeColor = Color.DarkSlateGray;
             size6Button.Location = new Point(527, 491);
             size6Button.Name = "size6Button";
             size6Button.Size = new Size(293, 176);
@@ -50,9 +50,9 @@
             // 
             // size4Button
             // 
-            size4Button.BackColor = Color.DarkSlateGray;
+            size4Button.BackColor = Color.Wheat;
             size4Button.Font = new Font("Segoe UI Black", 36F, FontStyle.Bold, GraphicsUnit.Point, 204);
-            size4Button.ForeColor = SystemColors.ButtonFace;
+            size4Button.ForeColor = Color.DarkSlateGray;
             size4Button.Location = new Point(527, 261);
             size4Button.Name = "size4Button";
             size4Button.Size = new Size(293, 176);
@@ -63,9 +63,9 @@
             // 
             // size3Button
             // 
-            size3Button.BackColor = Color.DarkSlateGray;
+            size3Button.BackColor = Color.Wheat;
             size3Button.Font = new Font("Segoe UI Black", 36F, FontStyle.Bold, GraphicsUnit.Point, 204);
-            size3Button.ForeColor = SystemColors.ButtonFace;
+            size3Button.ForeColor = Color.DarkSlateGray;
             size3Button.Location = new Point(159, 261);
             size3Button.Name = "size3Button";
             size3Button.Size = new Size(293, 176);
@@ -76,9 +76,9 @@
             // 
             // size5Button
             // 
-            size5Button.BackColor = Color.DarkSlateGray;
+            size5Button.BackColor = Color.Wheat;
             size5Button.Font = new Font("Segoe UI Black", 36F, FontStyle.Bold, GraphicsUnit.Point, 204);
-            size5Button.ForeColor = SystemColors.ButtonFace;
+            size5Button.ForeColor = Color.DarkSlateGray;
             size5Button.Location = new Point(159, 491);
             size5Button.Name = "size5Button";
             size5Button.Size = new Size(293, 176);
@@ -91,6 +91,7 @@
             // 
             chooseSizeLabel.AutoSize = true;
             chooseSizeLabel.Font = new Font("Segoe UI Black", 27.75F, FontStyle.Bold, GraphicsUnit.Point, 204);
+            chooseSizeLabel.ForeColor = Color.DarkSlateGray;
             chooseSizeLabel.Location = new Point(12, 71);
             chooseSizeLabel.Name = "chooseSizeLabel";
             chooseSizeLabel.Size = new Size(308, 50);

@@ -36,7 +36,7 @@ namespace _2048WinFormsGame
             userRepository = new UserRepository();
             userRepository.Load();
             score = 0;
-            firstTime = true;
+            firstTimeLose = true;
             bestResultNumberLabel.Text = findBestResult();
 
             GenerateNumber();
@@ -82,7 +82,7 @@ namespace _2048WinFormsGame
 
             label.BackColor = Color.FromArgb(192, 192, 255);
             label.Font = new Font("Bahnschrift SemiCondensed", 27.75F, FontStyle.Bold, GraphicsUnit.Point, 204);
-            label.ForeColor = Color.SaddleBrown;
+            label.ForeColor = Color.FromArgb(119, 110, 101);
             label.Name = "label128";
             switch (mapSize)
             {
@@ -230,8 +230,35 @@ namespace _2048WinFormsGame
                 {
                     if (mapNumbers[j, i] == 0) mapLabel[j, i].Text = "";
                     else mapLabel[j, i].Text = Convert.ToString(mapNumbers[j, i]);
+                    updateColor(j, i);
                 }
             }
+        }
+
+        private void updateColor(int j, int i)
+        {
+            int num = mapNumbers[j, i];
+
+
+           switch (num)
+           {
+                case 0: mapLabel[j, i].BackColor = Color.FromArgb(205, 193, 180); break;
+                case 2: mapLabel[j, i].BackColor = Color.FromArgb(238, 228, 218); break;
+                case 4: mapLabel[j, i].BackColor = Color.FromArgb(237, 224, 200); break;
+                case 8: mapLabel[j, i].BackColor = Color.FromArgb(242, 177, 121); break;
+                case 16: mapLabel[j, i].BackColor = Color.FromArgb(245, 149, 99); break;
+                case 32: mapLabel[j, i].BackColor = Color.FromArgb(246, 124, 95); break;
+                case 64: mapLabel[j, i].BackColor = Color.FromArgb(246, 94, 59); break;
+                case 128: mapLabel[j, i].BackColor = Color.FromArgb(237, 207, 114); break;
+                case 256: mapLabel[j, i].BackColor = Color.FromArgb(237, 204, 97); break;
+                case 512: mapLabel[j, i].BackColor = Color.FromArgb(237, 200, 80); break;
+                case 1024: mapLabel[j, i].BackColor = Color.FromArgb(237, 197, 63); break;
+                case 2048: mapLabel[j, i].BackColor = Color.FromArgb(237, 194, 46); break;
+                default: mapLabel[j, i].BackColor = Color.FromArgb(60, 58, 50); break;
+            }
+
+            if (num < 8) mapLabel[j, i].ForeColor = Color.FromArgb(119, 110, 101);
+            else mapLabel[j, i].ForeColor = Color.FromArgb(249, 246, 242);
         }
 
         private void updateLastMapNumbers()

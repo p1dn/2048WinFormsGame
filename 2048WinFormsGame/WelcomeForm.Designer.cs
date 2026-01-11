@@ -58,9 +58,9 @@
             // 
             // userNameTextBox
             // 
-            userNameTextBox.BackColor = SystemColors.ControlDarkDark;
+            userNameTextBox.BackColor = Color.Wheat;
             userNameTextBox.Font = new Font("Segoe UI Black", 24F, FontStyle.Bold, GraphicsUnit.Point, 204);
-            userNameTextBox.ForeColor = SystemColors.InactiveBorder;
+            userNameTextBox.ForeColor = Color.DarkSlateGray;
             userNameTextBox.Location = new Point(325, 398);
             userNameTextBox.Name = "userNameTextBox";
             userNameTextBox.Size = new Size(324, 50);
@@ -69,12 +69,15 @@
             // 
             // enterButton
             // 
+            enterButton.BackColor = Color.LemonChiffon;
+            enterButton.Font = new Font("Segoe UI Black", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 204);
+            enterButton.ForeColor = Color.DarkSlateGray;
             enterButton.Location = new Point(325, 549);
             enterButton.Name = "enterButton";
             enterButton.Size = new Size(324, 81);
             enterButton.TabIndex = 3;
             enterButton.Text = "Далее";
-            enterButton.UseVisualStyleBackColor = true;
+            enterButton.UseVisualStyleBackColor = false;
             enterButton.Click += enterButton_Click;
             // 
             // WelcomeForm
