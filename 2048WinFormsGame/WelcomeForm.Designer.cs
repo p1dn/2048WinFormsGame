@@ -39,22 +39,22 @@
             helloLabel.AutoSize = true;
             helloLabel.Font = new Font("Segoe UI Black", 36F, FontStyle.Bold, GraphicsUnit.Point, 204);
             helloLabel.ForeColor = Color.DarkSlateGray;
-            helloLabel.Location = new Point(233, 49);
+            helloLabel.Location = new Point(353, 33);
             helloLabel.Name = "helloLabel";
-            helloLabel.Size = new Size(517, 65);
+            helloLabel.Size = new Size(266, 65);
             helloLabel.TabIndex = 0;
-            helloLabel.Text = "Добро пожаловать!";
+            helloLabel.Text = "Welcome!";
             // 
             // enterNameLabel
             // 
             enterNameLabel.AutoSize = true;
             enterNameLabel.Font = new Font("Segoe UI Black", 24F, FontStyle.Bold, GraphicsUnit.Point, 204);
             enterNameLabel.ForeColor = Color.DarkSlateGray;
-            enterNameLabel.Location = new Point(325, 331);
+            enterNameLabel.Location = new Point(342, 331);
             enterNameLabel.Name = "enterNameLabel";
-            enterNameLabel.Size = new Size(324, 45);
+            enterNameLabel.Size = new Size(288, 45);
             enterNameLabel.TabIndex = 1;
-            enterNameLabel.Text = "Введите ваше имя";
+            enterNameLabel.Text = "Enter Your Name";
             // 
             // userNameTextBox
             // 
@@ -76,7 +76,7 @@
             enterButton.Name = "enterButton";
             enterButton.Size = new Size(324, 81);
             enterButton.TabIndex = 3;
-            enterButton.Text = "Далее";
+            enterButton.Text = "Next";
             enterButton.UseVisualStyleBackColor = false;
             enterButton.Click += enterButton_Click;
             // 

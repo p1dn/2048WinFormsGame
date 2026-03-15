@@ -48,7 +48,7 @@
             gameRulesLabel.Name = "gameRulesLabel";
             gameRulesLabel.Size = new Size(960, 75);
             gameRulesLabel.TabIndex = 0;
-            gameRulesLabel.Text = "Как играть: Используйте клавиши со стрелками, чтобы перемещать плитки. Когда две плитки с одинаковым номером соприкасаются, они объединяются в одну!";
+            gameRulesLabel.Text = "How to play: Use your arrow keys to move the tiles. When two tiles with the same number touch, they merge into one!";
             // 
             // scoreTextLabel
             // 
@@ -56,9 +56,9 @@
             scoreTextLabel.Font = new Font("Segoe UI Black", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 204);
             scoreTextLabel.Location = new Point(12, 196);
             scoreTextLabel.Name = "scoreTextLabel";
-            scoreTextLabel.Size = new Size(88, 37);
+            scoreTextLabel.Size = new Size(98, 37);
             scoreTextLabel.TabIndex = 1;
-            scoreTextLabel.Text = "Счёт:";
+            scoreTextLabel.Text = "Score:";
             // 
             // scoreNumberLabel
             // 
@@ -74,28 +74,28 @@
             // 
             играToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { результатыToolStripMenuItem, перезагрузкаToolStripMenuItem, выходToolStripMenuItem });
             играToolStripMenuItem.Name = "играToolStripMenuItem";
-            играToolStripMenuItem.Size = new Size(46, 20);
-            играToolStripMenuItem.Text = "Игра";
+            играToolStripMenuItem.Size = new Size(50, 20);
+            играToolStripMenuItem.Text = "Game";
             // 
             // результатыToolStripMenuItem
             // 
             результатыToolStripMenuItem.Name = "результатыToolStripMenuItem";
             результатыToolStripMenuItem.Size = new Size(180, 22);
-            результатыToolStripMenuItem.Text = "Результаты";
+            результатыToolStripMenuItem.Text = "Results";
             результатыToolStripMenuItem.Click += результатыToolStripMenuItem_Click;
             // 
             // перезагрузкаToolStripMenuItem
             // 
             перезагрузкаToolStripMenuItem.Name = "перезагрузкаToolStripMenuItem";
             перезагрузкаToolStripMenuItem.Size = new Size(180, 22);
-            перезагрузкаToolStripMenuItem.Text = "Перезагрузка";
+            перезагрузкаToolStripMenuItem.Text = "Restart";
             перезагрузкаToolStripMenuItem.Click += перезагрузкаToolStripMenuItem_Click;
             // 
             // выходToolStripMenuItem
             // 
             выходToolStripMenuItem.Name = "выходToolStripMenuItem";
             выходToolStripMenuItem.Size = new Size(180, 22);
-            выходToolStripMenuItem.Text = "Выход";
+            выходToolStripMenuItem.Text = "Exit";
             выходToolStripMenuItem.Click += выходToolStripMenuItem_Click;
             // 
             // menuStrip1
@@ -111,11 +111,11 @@
             // 
             bestResultTextLabel.AutoSize = true;
             bestResultTextLabel.Font = new Font("Segoe UI Black", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 204);
-            bestResultTextLabel.Location = new Point(412, 196);
+            bestResultTextLabel.Location = new Point(523, 196);
             bestResultTextLabel.Name = "bestResultTextLabel";
-            bestResultTextLabel.Size = new Size(285, 37);
+            bestResultTextLabel.Size = new Size(174, 37);
             bestResultTextLabel.TabIndex = 4;
-            bestResultTextLabel.Text = "Лучший результат:";
+            bestResultTextLabel.Text = "Best Result:";
             // 
             // bestResultNumberLabel
             // 

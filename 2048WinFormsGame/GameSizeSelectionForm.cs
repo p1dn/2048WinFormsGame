@@ -20,7 +20,7 @@ namespace _2048WinFormsGame
 
         private void GameSizeSelectionForm_Load(object sender, EventArgs e)
         {
-            chooseSizeLabel.Text = $"{name}, выберите размер поля";
+            chooseSizeLabel.Text = $"{name}, select field size";
         }
 
         private void size3Button_Click(object sender, EventArgs e) => startGame(3);

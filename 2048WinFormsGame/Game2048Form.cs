@@ -287,7 +287,7 @@ namespace _2048WinFormsGame
 
             if (IsGameOver())
             {
-                MessageBox.Show("Вы проиграли");
+                MessageBox.Show("You Lose");
                 if (firstTimeLose)
                 {
                     user.Score = score;

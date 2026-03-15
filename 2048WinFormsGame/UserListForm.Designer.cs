@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             userListDataGridView = new DataGridView();
+            closeButton = new Button();
             UserName = new DataGridViewTextBoxColumn();
             Result = new DataGridViewTextBoxColumn();
-            closeButton = new Button();
             ((System.ComponentModel.ISupportInitialize)userListDataGridView).BeginInit();
             SuspendLayout();
             // 
@@ -48,22 +48,6 @@
             userListDataGridView.Size = new Size(960, 854);
             userListDataGridView.TabIndex = 0;
             // 
-            // UserName
-            // 
-            UserName.FillWeight = 200F;
-            UserName.HeaderText = "Имя";
-            UserName.Name = "UserName";
-            UserName.ReadOnly = true;
-            UserName.Width = 418;
-            // 
-            // Result
-            // 
-            Result.FillWeight = 200F;
-            Result.HeaderText = "Результат";
-            Result.Name = "Result";
-            Result.ReadOnly = true;
-            Result.Width = 500;
-            // 
             // closeButton
             // 
             closeButton.BackColor = Color.LemonChiffon;
@@ -73,9 +57,25 @@
             closeButton.Name = "closeButton";
             closeButton.Size = new Size(960, 77);
             closeButton.TabIndex = 1;
-            closeButton.Text = "Закрыть";
+            closeButton.Text = "Close";
             closeButton.UseVisualStyleBackColor = false;
             closeButton.Click += closeButton_Click;
+            // 
+            // UserName
+            // 
+            UserName.FillWeight = 200F;
+            UserName.HeaderText = "Name";
+            UserName.Name = "UserName";
+            UserName.ReadOnly = true;
+            UserName.Width = 418;
+            // 
+            // Result
+            // 
+            Result.FillWeight = 200F;
+            Result.HeaderText = "Result";
+            Result.Name = "Result";
+            Result.ReadOnly = true;
+            Result.Width = 500;
             // 
             // UserListForm
             // 
